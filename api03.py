@@ -1,4 +1,4 @@
-import json #importa a biblioteca 'json'
+import json
 
 items = [
     {
@@ -20,12 +20,14 @@ items = [
 ]
 
 def get_all():
-    var_json = json.dumps(items, indent=4) #converte o dicionario 'items' para json e armazenar em var_json
-    print(var_json) #imprime o json
+    var_json = json.dumps(items, indent=2)
+    return var_json
     
 def get_one(id):
-    var_json = json.dumps(items, indent=4)
-    print(var_json)
+    for item in items:
+        if item.get("id") == id:
+            return json.dumps(item, indent=2)
+   
     
-#get_all()
-get_one(1)
+#print (get_all())
+print (get_one(3))
