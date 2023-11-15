@@ -14,7 +14,7 @@ database = './temp_db.db'
 # Retorna como uma 'list' de 'dict'.
 
 
-def get_all_items():
+def get_all_one():
 
     # Cria uma conexão com o banco de dados SQLite.
     conn = sqlite3.connect(database)
@@ -26,7 +26,7 @@ def get_all_items():
     cursor = conn.cursor()
 
     # Query para consultar os registrosn na tabela 'item'.
-    sql = "SELECT * FROM item WHERE item_status != 'off'"
+    sql = "SELECT * FROM owner WHERE owner_status != 'off'"
 
     # Executa o SQL acima no banco de dados.
     cursor.execute(sql)
@@ -56,7 +56,7 @@ def get_all_items():
 # Retorna como um 'dict'.
 
 
-def get_one_item(id):
+def get_one(id):
 
     # Incializa o banco de dados.
     conn = sqlite3.connect(database)
@@ -98,7 +98,7 @@ os.system('cls')
 # Exemplo para obter um 'item' pelo ID.
 print(
     json.dumps(
-        get_one_item(5),
+        get_one(5),
         ensure_ascii=False,
         indent=2
     )
