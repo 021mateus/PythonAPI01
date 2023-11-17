@@ -6,7 +6,7 @@ import sqlite3
 import os
 
 # Define o banco de dados.
-database = './temp_db.db'
+database = './db/temp_db.db'
 
 
 # Função get_all_items()
